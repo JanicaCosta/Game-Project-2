@@ -2,6 +2,8 @@
 
 const cells = document.querySelectorAll(".cell")
 
+let checkTurn = true ;
+
 /**defining players */
 
 let playerX = "X";
@@ -13,6 +15,15 @@ document.addEventListener("click", myfunction);
 
 function myfunction(event) {
     if(event.target.matches(".cell")){
-        console.log(event.target.id)
+        startClicking(event.target.id)
     }
 }; 
+
+/** function beelow is to play/starting the game when we click in the cell */
+
+function startClicking(id) {
+    let cell = document.getElementById(id);
+    turn = checkTurn ? playerX : playerO;
+    cell.textContent = turn;
+    checkTurn = !checkTurn;
+};
