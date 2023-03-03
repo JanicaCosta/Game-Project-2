@@ -1,6 +1,7 @@
 const cells = document.querySelectorAll(".cell");
 let checkTurn = true;
 
+/** defining combinations for the winner */
 
 const combinations = [
   [0, 1, 2],
@@ -14,6 +15,7 @@ const combinations = [
 ];
 
 /** defining players */
+
 let playerX = "X";
 let playerO = "O";
 let scores = {
@@ -81,23 +83,43 @@ function gameCompleted(winner) {
     scores[playerO] += 1;;
     
   } 
-
+  
   updateScores();
+  showModal();
   clearCells();
 }
- 
+
+function showModal(text){
+  const modal = document.createElement('div');
+  modal.classList.add('modal fade');
+
+
+  const modalText = document.createElement('p');
+  modalText.textContet = 'you won!'
+
+
+  const button = document.createElement('button')
+  button.textContent = 'Start game!';
+  button.addEventListener ('click', () => {
+  modal.remove();
+  cleanGame();
+});
+
+modal.appendChild(modalText);
+modal.appendChild(button);
+
+document.body.appendChild(modal);
+}
+
 
 function clearCells() {
     const cells = document.querySelectorAll(".cell");
         
         for (let i=0; i < cells.length; i++) {
     cells[i].textContent = '';
+
     }
 
-
-
-
-  
 }
 
 function updateScores(){
