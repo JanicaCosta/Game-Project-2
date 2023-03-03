@@ -27,12 +27,6 @@ cells.forEach(function (cell) {
   })
 })
 
-/** defining event when clicking in the space to show either X or O */
-// document.addEventListener("click", function cellClickCheck(event){
-//         if(event.target.matches(".cell")){
-//             cellClickedCallback(event.target.id);
-//     }
-// });
 
 function cellClickedCallback(cell) {
   turn = checkTurn ? playerX : playerO; // 'X' or 'O'
@@ -73,7 +67,7 @@ function checkDraw(turn) {
     }
   }
   return x + o === 9 ? true : false;
-}
+  }
 
 function gameCompleted(winner) {
   endOfGame = true;
@@ -85,25 +79,29 @@ function gameCompleted(winner) {
     
   } else {
     scores[playerO] += 1;;
-
+    
   } 
 
-  // let timer = 20;
-  // setInterval(() => {
-  //   h3.innerHTML = "Starting a new game in " + timer-- + " seconds";
-  // }, 1000);
-
-  // setTimeout(() => location.reload(), 20000);
   updateScores();
   clearCells();
 }
  
 
 function clearCells() {
+    const cells = document.querySelectorAll(".cell");
+        
+        for (let i=0; i < cells.length; i++) {
+    cells[i].textContent = '';
+    }
+
+
+
+
   
 }
 
 function updateScores(){
   document.getElementById("win").innerHTML = scores[playerX]
   document.getElementById("loose").innerHTML = scores[playerO]
+  document.getElementById("draw").innerHTML = scores[checkDraw]
 }
