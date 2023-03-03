@@ -40,7 +40,7 @@ function startClicking(id) {
     cell.textContent = turn;
     checkTurn = !checkTurn;
     cell.classList.add(turn);
-    checkWiner(turn);
+    checkWinner(turn);
 };
 
 /** function below will be to check the winner using the combinations above */
@@ -79,3 +79,5 @@ function checkDraw(){
     }
     return x + o === 9 ? true : false;
 }
+
+function gameCompleted()
