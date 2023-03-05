@@ -85,13 +85,13 @@ function gameCompleted(winner) {
   } 
   
   updateScores();
-  showModal();
   clearCells();
+  showModal();
 }
 
-function showModal(text){
+function showModal(){
   const modal = document.createElement('div');
-  modal.classList.add('modal fade');
+  modal.classList.add('showModal');
 
 
   const modalText = document.createElement('p');
@@ -102,7 +102,7 @@ function showModal(text){
   button.textContent = 'Start game!';
   button.addEventListener ('click', () => {
   modal.remove();
-  cleanGame();
+  clearCells();
 });
 
 modal.appendChild(modalText);
@@ -125,5 +125,5 @@ function clearCells() {
 function updateScores(){
   document.getElementById("win").innerHTML = scores[playerX]
   document.getElementById("loose").innerHTML = scores[playerO]
-  document.getElementById("draw").innerHTML = scores[checkDraw]
+  /**document.getElementById("draw").innerHTML = scores[checkDraw]*/
 }
