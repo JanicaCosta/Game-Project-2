@@ -19,8 +19,8 @@ const combinations = [
 let playerX = "X";
 let playerO = "O";
 let scores = {
-  "X": 0,
-  "O": 0,
+  [playerX]: 0,
+  [playerO]: 0,
 }
 
 cells.forEach(function (cell) {
@@ -31,12 +31,14 @@ cells.forEach(function (cell) {
 
 
 function cellClickedCallback(cell) {
-  turn = checkTurn ? playerX : playerO; // 'X' or 'O'
+  if (!cell.textContent) {
+    turn = checkTurn ? playerX : playerO; // 'X' or 'O'
   cell.textContent = turn;
   checkTurn = !checkTurn;
   // 'X' or 'O' are being added to check the winner not for styling purposes
   cell.classList.add(turn);
   checkWinner(turn);
+  }
 }
 
 function checkWinner(turn) {
@@ -49,7 +51,7 @@ function checkWinner(turn) {
   if (winner) {
     gameCompleted(turn);
   } else if (checkDraw()) {
-    gameCompleted();
+    gameCompleted("drawn");
   }
 }
 
@@ -72,22 +74,17 @@ function checkDraw(turn) {
   }
 
 function gameCompleted(winner) {
-  endOfGame = true;
-  const result = document.getElementById("result");
-  
-
-  if (winner) {
+  if (winner === "draw") {
+    scores[playerO] += 1;
+    scores[playerX] += 1;
+ } else {
     scores[winner] += 1;;
-    
-  } else {
-    scores[playerO] += 1;;
-    
-  } 
-  
-  updateScores();
-  clearCells();
-  showModal();
+ }
+ updateScores();
+ clearCells();
+ showModal();
 }
+
 
 function showModal(){
   const modal = document.createElement('div');
@@ -114,16 +111,14 @@ document.body.appendChild(modal);
 
 function clearCells() {
     const cells = document.querySelectorAll(".cell");
-        
-        for (let i=0; i < cells.length; i++) {
+      for (let i=0; i < cells.length; i++) {
     cells[i].textContent = '';
-
+    cells[i].classList = ["cell"]
     }
 
 }
 
 function updateScores(){
-  document.getElementById("win").innerHTML = scores[playerX]
-  document.getElementById("loose").innerHTML = scores[playerO]
-  /**document.getElementById("draw").innerHTML = scores[checkDraw]*/
+  document.getElementById("playerX-score").innerHTML = scores[playerX]
+  document.getElementById("playerO-score").innerHTML = scores[playerO]
 }
