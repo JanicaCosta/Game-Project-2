@@ -1,6 +1,8 @@
 const cells = document.querySelectorAll(".cell");
 let checkTurn = true;
 
+let winner ;
+
 /** defining combinations for the winner */
 
 const combinations = [
@@ -42,7 +44,7 @@ function cellClickedCallback(cell) {
 }
 
 function checkWinner(turn) {
-  const winner = combinations.some((comb) => {
+  winner = combinations.some((comb) => {
     return comb.every((index) => {
       return cells[index].classList.contains(turn);
     });
@@ -74,39 +76,32 @@ function checkDraw(turn) {
   }
 
 function gameCompleted(winner) {
-  if (winner === "draw") {
+  if (winner === "drawn") {
     scores[playerO] += 1;
     scores[playerX] += 1;
  } else {
     scores[winner] += 1;;
  }
+ console.log(winner);
  updateScores();
  clearCells();
- showModal();
+ showModal(winner);
 }
 
 
-function showModal(){
-  const modal = document.createElement('div');
-  modal.classList.add('showModal');
+function showModal(winner){
+  var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+  myModal.show();
 
+  var textModal = document.getElementById('textResult');
 
-  const modalText = document.createElement('p');
-  modalText.textContet = 'you won!'
+  if (winner === "drawn"){
+    textModal.innerHTML = `game ${winner} `;
+  } else {
+    textModal.innerHTML = `Player ${winner} won`;
+  }
+};
 
-
-  const button = document.createElement('button')
-  button.textContent = 'Start game!';
-  button.addEventListener ('click', () => {
-  modal.remove();
-  clearCells();
-});
-
-modal.appendChild(modalText);
-modal.appendChild(button);
-
-document.body.appendChild(modal);
-}
 
 
 function clearCells() {
