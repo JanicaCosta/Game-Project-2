@@ -14,17 +14,19 @@ the idea was to make the page very simple with a board and at the bottom a score
 
 ## Game
 
-As a normal tic tac toe game , is only 2 players which have been set up as player X and Player 0.
+As a normal tic tac toe game , is only 2 players which have been set up, player X and Player O.
+
 The first player to start is player X, and then player O.
-The goal of the game is win, so if there is a winner a modal will show up with the winner. the next player to start the game will the follow player, so if the winner is player X, they next player to start the game will be player O.
+
+The goal of the game is win the game, so if there is a winner a modal will show up with the winner. the next player to start the game will the follow player, so if the winner is player X, they next player to start the game will be player O.
 
 ## Game Results
 
-At the bottom there are a results are where will sum the win for each player, if there is a drawn, 1 point will sum to each player.
+At the bottom there are a results where will sum the win for each player, if there is a drawn, 1 point will sum to each player.
 
 ### Responsive
 
-the game is responsive to any device. 
+The game is responsive to any device. 
 
 https://ui.dev/amiresponsive?url=https://janicacosta.github.io/Game-Project-2/
 ![image](https://user-images.githubusercontent.com/117991189/224378866-3dd6ba8e-cdc5-4931-8abc-d77dc40434f2.png)
