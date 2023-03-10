@@ -27,6 +27,8 @@ At the bottom there are a results are where will sum the win for each player, if
 the game is responsive to any device. 
 
 https://ui.dev/amiresponsive?url=https://janicacosta.github.io/Game-Project-2/
+![image](https://user-images.githubusercontent.com/117991189/224378866-3dd6ba8e-cdc5-4931-8abc-d77dc40434f2.png)
+
 
 ### Validator Testing
 
