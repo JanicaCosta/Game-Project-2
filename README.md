@@ -8,12 +8,34 @@ I felt this project very challenging, JavaScript in my opinion is very dificult 
 I decided to do a tic tac toe game as is a simple game but very complexing code .
 
 
+## Design
+
+the idea was to make the page very simple with a board and at the bottom a score area to sum the wins from which player.
+
+## Game
+
+As a normal tic tac toe game , is only 2 players which have been set up as player X and Player 0.
+The first player to start is player X, and then player O.
+The goal of the game is win, so if there is a winner a modal will show up with the winner. the next player to start the game will the follow player, so if the winner is player X, they next player to start the game will be player O.
+
+## Game Results
+
+At the bottom there are a results are where will sum the win for each player, if there is a drawn, 1 point will sum to each player.
+
+### Responsive
+
+the game is responsive to any device. 
 
 
 
 
 
-## Validator Testing
+
+
+
+
+
+### Validator Testing
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
 
