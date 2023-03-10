@@ -25,6 +25,8 @@ let scores = {
   [playerO]: 0,
 }
 
+
+
 cells.forEach(function(cell) {
   cell.addEventListener("click", function cellClickCheck(event) {
     cellClickedCallback(this);
@@ -43,6 +45,8 @@ function cellClickedCallback(cell) {
   }
 }
 
+/** function below is to check if there is a winner, so will run all winner combantions to check if there is a winner */
+
 function checkWinner(turn) {
   winner = combinations.some((comb) => {
     return comb.every((index) => {
@@ -57,6 +61,7 @@ function checkWinner(turn) {
   }
 }
 
+/** function below is to check for a draw, so if all cells are filled and there is no winner combinations */
 
 function checkDraw(turn) {
   let x = 0;
@@ -74,6 +79,8 @@ function checkDraw(turn) {
   }
   return x + o === 9 ? true : false;
 }
+
+/** function below is to check when the game is completed, it will add update the score and then clear all cells to start the game again and then finnaly will show a modal with the winner */
 
 function gameCompleted(winner) {
   if (winner === "drawn") {
