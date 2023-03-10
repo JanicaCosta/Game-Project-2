@@ -24,6 +24,14 @@ The goal of the game is win the game, so if there is a winner a modal will show 
 
 At the bottom there are a results where will sum the win for each player, if there is a drawn, 1 point will sum to each player.
 
+## Testing
+
+I have tested the game in diferent browsers.
+
+I can confirm the results are always right.
+
+I can confirm the design for the game is very simple and the main goal was making the game easy to play and be responsive to all diferent situations, X winning, O winning or Drawn
+
 ### Responsive
 
 The game is responsive to any device. 
