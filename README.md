@@ -30,7 +30,7 @@ I have tested the game in diferent browsers.
 
 I can confirm the results are always right.
 
-I can confirm the design for the game is very simple and the main goal was making the game easy to play and be responsive to all diferent situations, X winning, O winning or Drawn
+I can confirm the design for the game is very simple and the main goal was making the game easy to play and be responsive to all diferent situations, X winning, O winning or Draw.
 
 ### Responsive
 
