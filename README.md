@@ -11,19 +11,29 @@ I decided to do a tic tac toe game as is a simple game but very complexing code 
 ## Design
 
 The idea was to make the page very simple with a board and at the bottom a score area to sum the wins from which player.
+![image](https://user-images.githubusercontent.com/117991189/224443115-16a5f0cc-651a-40aa-a2d4-a0f24f5cd9f5.png)
+
 At the bottom of the page is a footer with the Rules for the game if anyone does not know.
+![image](https://user-images.githubusercontent.com/117991189/224443138-0e26892c-1e48-4624-b244-7d4fd851bd03.png)
 
 ## Game
 
 As a normal tic tac toe game , is only 2 players which have been set up, player X and Player O.
 
 The first player to start is player X, and then player O.
+![image](https://user-images.githubusercontent.com/117991189/224443209-8aa19032-64e6-4cde-96c4-dc4a464d1b6c.png)
 
-The goal of the game is win the game, so if there is a winner a modal will show up with the winner. the next player to start the game will the follow player, so if the winner is player X, they next player to start the game will be player O.
+The goal of the game is wining the game, so if there is a winner a modal will show up with the winner. 
+![image](https://user-images.githubusercontent.com/117991189/224443367-ac1a694f-9004-4110-a30f-b0f4250fe534.png)
+
+
+The next player to start the game will the follow player, so if the winner is player X, they next player to start the game will be player O.
 
 ## Game Results
 
 At the bottom there are a results where will sum the win for each player, if there is a drawn, 1 point will sum to each player.
+![image](https://user-images.githubusercontent.com/117991189/224443229-779f28e2-05be-42c4-8220-d8dcc0a6380f.png)
+
 
 ## Testing
 
