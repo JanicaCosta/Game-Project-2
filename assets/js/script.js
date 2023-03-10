@@ -57,7 +57,7 @@ function checkWinner(turn) {
   if (winner) {
     gameCompleted(turn);
   } else if (checkDraw()) {
-    gameCompleted("drawn");
+    gameCompleted("draw");
   }
 }
 
@@ -83,7 +83,7 @@ function checkDraw(turn) {
 /** function below is to check when the game is completed, it will add update the score and then clear all cells to start the game again and then finnaly will show a modal with the winner */
 
 function gameCompleted(winner) {
-  if (winner === "drawn") {
+  if (winner === "draw") {
     scores[playerO] += 1;
     scores[playerX] += 1;
   } else {
@@ -102,7 +102,7 @@ function showModal(winner) {
 
   var textModal = document.getElementById('textResult');
 
-  if (winner === "drawn") {
+  if (winner === "draw") {
     textModal.innerHTML = `Game ${winner} `;
   } else {
     textModal.innerHTML = `Player ${winner} WON`;
