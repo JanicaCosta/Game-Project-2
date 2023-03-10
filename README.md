@@ -10,7 +10,8 @@ I decided to do a tic tac toe game as is a simple game but very complexing code 
 
 ## Design
 
-the idea was to make the page very simple with a board and at the bottom a score area to sum the wins from which player.
+The idea was to make the page very simple with a board and at the bottom a score area to sum the wins from which player.
+At the bottom of the page is a footer with the Rules for the game if anyone does not know.
 
 ## Game
 
