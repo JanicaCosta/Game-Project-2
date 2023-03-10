@@ -1,7 +1,7 @@
 const cells = document.querySelectorAll(".cell");
 let checkTurn = true;
 
-let winner ;
+let winner;
 
 /** defining combinations for the winner */
 
@@ -25,7 +25,7 @@ let scores = {
   [playerO]: 0,
 }
 
-cells.forEach(function (cell) {
+cells.forEach(function(cell) {
   cell.addEventListener("click", function cellClickCheck(event) {
     cellClickedCallback(this);
   })
@@ -35,11 +35,11 @@ cells.forEach(function (cell) {
 function cellClickedCallback(cell) {
   if (!cell.textContent) {
     turn = checkTurn ? playerX : playerO; // 'X' or 'O'
-  cell.textContent = turn;
-  checkTurn = !checkTurn;
-  // 'X' or 'O' are being added to check the winner not for styling purposes
-  cell.classList.add(turn);
-  checkWinner(turn);
+    cell.textContent = turn;
+    checkTurn = !checkTurn;
+    // 'X' or 'O' are being added to check the winner not for styling purposes
+    cell.classList.add(turn);
+    checkWinner(turn);
   }
 }
 
@@ -73,47 +73,47 @@ function checkDraw(turn) {
     }
   }
   return x + o === 9 ? true : false;
-  }
+}
 
 function gameCompleted(winner) {
   if (winner === "drawn") {
     scores[playerO] += 1;
     scores[playerX] += 1;
- } else {
+  } else {
     scores[winner] += 1;;
- }
- console.log(winner);
- updateScores();
- clearCells();
- showModal(winner);
+  }
+  console.log(winner);
+  updateScores();
+  clearCells();
+  showModal(winner);
 }
 
 
-function showModal(winner){
+function showModal(winner) {
   var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
   myModal.show();
 
   var textModal = document.getElementById('textResult');
 
-  if (winner === "drawn"){
-    textModal.innerHTML = `game ${winner} `;
+  if (winner === "drawn") {
+    textModal.innerHTML = `Game ${winner} `;
   } else {
-    textModal.innerHTML = `Player ${winner} won`;
+    textModal.innerHTML = `Player ${winner} WON`;
   }
 };
 
 
 
 function clearCells() {
-    const cells = document.querySelectorAll(".cell");
-      for (let i=0; i < cells.length; i++) {
+  const cells = document.querySelectorAll(".cell");
+  for (let i = 0; i < cells.length; i++) {
     cells[i].textContent = '';
     cells[i].classList = ["cell"]
-    }
+  }
 
 }
 
-function updateScores(){
+function updateScores() {
   document.getElementById("playerX-score").innerHTML = scores[playerX]
   document.getElementById("playerO-score").innerHTML = scores[playerO]
 }
